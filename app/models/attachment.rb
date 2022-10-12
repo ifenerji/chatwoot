@@ -24,6 +24,7 @@ class Attachment < ApplicationRecord
   include Rails.application.routes.url_helpers
 
   ACCEPTABLE_FILE_TYPES = %w[
+    application/octet-stream
     text/csv text/plain text/rtf
     application/json application/pdf
     application/zip application/x-7z-compressed application/vnd.rar application/x-tar
