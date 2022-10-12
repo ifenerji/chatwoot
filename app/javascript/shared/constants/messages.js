@@ -26,6 +26,8 @@ export const ALLOWED_FILE_TYPES =
   'audio/*,' +
   'video/*,' +
   '.3gpp,' +
+  '.wcp,' +
+  '.zpd,' +
   'text/csv, text/plain, application/json, application/pdf, text/rtf,' +
   'application/zip, application/x-7z-compressed application/vnd.rar application/x-tar,' +
   'application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/vnd.oasis.opendocument.text,' +
