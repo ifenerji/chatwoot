@@ -19,6 +19,7 @@
 #  index_attachments_on_account_id  (account_id)
 #  index_attachments_on_message_id  (message_id)
 #
+require 'uri'
 
 class Attachment < ApplicationRecord
   include Rails.application.routes.url_helpers
@@ -54,6 +55,13 @@ class Attachment < ApplicationRecord
   # NOTE: the URl returned does a 301 redirect to the actual file
   def file_url
     file.attached? ? url_for(file) : ''
+  end
+
+  def file_name
+    # Split the URL after the last "/"
+    segments = file_url.split('/')[-1]
+    # URI decode the last segment
+    URI.decode_www_form_component(segments)
   end
 
   # NOTE: for External services use this methods since redirect doesn't work effectively in a lot of cases
